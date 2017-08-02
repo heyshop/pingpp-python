@@ -2,9 +2,8 @@
 
 import pingpp
 import os
-import time
 
-api_key = 'sk_test_ibbTe5jLGCi5rzfH4OqPW9KC'
+api_key = 'partner_abcd2b26f3e36ceb433d0270'
 
 # 设置 API Key
 pingpp.api_key = api_key
@@ -30,7 +29,8 @@ except Exception as e:
 
 # 查询 charge refund 对象
 try:
-    charge_refund_info = pingpp.PartnerChargeRefund.retrieve('ch_iTyrvHrzjjrLuXvnXDKW94aH','re_8yfHq5jH4Oy5n5KKKSbDibbT')
+    charge_refund_info = pingpp.PartnerChargeRefund.retrieve('ch_iTyrvHrzjjrLuXvnXDKW94aH',
+                                                             charge_refund.id)
     print(charge_refund_info.to_str())
 except Exception as e:
     print(e.http_body)

@@ -4,7 +4,7 @@ import pingpp
 import os
 import time
 
-api_key = 'partner_2381239714787349712987'
+api_key = 'partner_abcd2b26f3e36ceb433d0270'
 
 # 设置 API Key
 pingpp.api_key = api_key
@@ -20,8 +20,8 @@ pingpp.private_key_path = os.path.join(
 # 创建charge对象
 try:
     charge = pingpp.PartnerCharge.create(
-        order_no='20161102000002',
-        channel='alipay_pc_direct',
+        order_no='20170802000002',
+        channel='alipay_wap',
         amount=100,  # 支付金额, 人民币单位：分
         currency='cny',
         client_ip='127.0.0.1',
