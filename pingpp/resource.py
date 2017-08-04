@@ -137,14 +137,7 @@ class PingppObject(dict):
             params = self._retrieve_params
 
         requestor = api_requestor.APIRequestor(self.api_key)
-        try:
-            response, api_key = requestor.request(method, url, params)
-        except Exception as e:
-            import logging
-            logger = logging.getLogger('apps')
-            logger.error('%s \n\n %s \n\n %s' % (method, url, params))
-            raise e
-
+        response, api_key = requestor.request(method, url, params)
         return convert_to_pingpp_object(response, api_key)
 
     def __repr__(self):
